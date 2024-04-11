@@ -1,0 +1,204 @@
+{
+  "version": "36.0.0",
+  "artifacts": {
+    "assembly-AwsCodepipelineStack-DeployStage": {
+      "type": "cdk:cloud-assembly",
+      "properties": {
+        "directoryName": "assembly-AwsCodepipelineStack-DeployStage",
+        "displayName": "AwsCodepipelineStack/DeployStage"
+      }
+    },
+    "AwsCodepipelineStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "AwsCodepipelineStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "AwsCodepipelineStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://851725461271/us-east-1",
+      "properties": {
+        "templateFile": "AwsCodepipelineStack.template.json",
+        "terminationProtection": false,
+        "tags": {
+          "contact": "abc@againabc.com",
+          "feature": "resource_stack",
+          "team": "best_team"
+        },
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::851725461271:role/cdk-hnb659fds-deploy-role-851725461271-us-east-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::851725461271:role/cdk-hnb659fds-cfn-exec-role-851725461271-us-east-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-851725461271-us-east-1/697b542b62a4ed3be804008f478f172f4aa636a234dd0019f7f363434b6a3830.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "AwsCodepipelineStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::851725461271:role/cdk-hnb659fds-lookup-role-851725461271-us-east-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        },
+        "stackName": "github-codepipeline-stack"
+      },
+      "dependencies": [
+        "AwsCodepipelineStack.assets"
+      ],
+      "metadata": {
+        "/AwsCodepipelineStack": [
+          {
+            "type": "aws:cdk:stack-tags",
+            "data": [
+              {
+                "Key": "contact",
+                "Value": "abc@againabc.com"
+              },
+              {
+                "Key": "feature",
+                "Value": "resource_stack"
+              },
+              {
+                "Key": "team",
+                "Value": "best_team"
+              }
+            ]
+          }
+        ],
+        "/AwsCodepipelineStack/Pipeline": [
+          {
+            "type": "aws:cdk:warning",
+            "data": "V1 pipeline type is implicitly selected when `pipelineType` is not set. If you want to use V2 type, set `PipelineType.V2`. [ack: @aws-cdk/aws-codepipeline:unspecifiedPipelineType]",
+            "trace": [
+              "Annotations.addMessage (/tmp/jsii-kernel-oHoEcl/node_modules/aws-cdk-lib/core/lib/annotations.js:1:1608)",
+              "Annotations.addWarningV2 (/tmp/jsii-kernel-oHoEcl/node_modules/aws-cdk-lib/core/lib/annotations.js:1:825)",
+              "new Pipeline (/tmp/jsii-kernel-oHoEcl/node_modules/aws-cdk-lib/aws-codepipeline/lib/pipeline.js:1:6677)",
+              "Kernel._Kernel_create (/tmp/tmp0hkckjt0/lib/program.js:10108:25)",
+              "Kernel.create (/tmp/tmp0hkckjt0/lib/program.js:9779:93)",
+              "KernelHost.processRequest (/tmp/tmp0hkckjt0/lib/program.js:11696:36)",
+              "KernelHost.run (/tmp/tmp0hkckjt0/lib/program.js:11656:22)",
+              "Immediate._onImmediate (/tmp/tmp0hkckjt0/lib/program.js:11657:46)",
+              "process.processImmediate (node:internal/timers:478:21)"
+            ]
+          }
+        ],
+        "/AwsCodepipelineStack/Pipeline/ArtifactsBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineArtifactsBucket22248F97"
+          }
+        ],
+        "/AwsCodepipelineStack/Pipeline/ArtifactsBucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineArtifactsBucketPolicyD4F9712A"
+          }
+        ],
+        "/AwsCodepipelineStack/Pipeline/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineRoleD68726F7"
+          }
+        ],
+        "/AwsCodepipelineStack/Pipeline/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineRoleDefaultPolicyC7A05455"
+          }
+        ],
+        "/AwsCodepipelineStack/Pipeline/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineC660917D"
+          }
+        ],
+        "/AwsCodepipelineStack/Pipeline/Source/pra-cloud_csv-etl/CodePipelineActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineSourcepracloudcsvetlCodePipelineActionRole6CD6DF0F"
+          }
+        ],
+        "/AwsCodepipelineStack/Pipeline/Source/pra-cloud_csv-etl/CodePipelineActionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineSourcepracloudcsvetlCodePipelineActionRoleDefaultPolicyBAEEF574"
+          }
+        ],
+        "/AwsCodepipelineStack/Pipeline/Build/Synth/CdkBuildProject/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineBuildSynthCdkBuildProjectRole808C155A"
+          }
+        ],
+        "/AwsCodepipelineStack/Pipeline/Build/Synth/CdkBuildProject/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineBuildSynthCdkBuildProjectRoleDefaultPolicyE35C3CF9"
+          }
+        ],
+        "/AwsCodepipelineStack/Pipeline/Build/Synth/CdkBuildProject/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "PipelineBuildSynthCdkBuildProject1250E181"
+          }
+        ],
+        "/AwsCodepipelineStack/CodePipeline/CodeBuildActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodePipelineCodeBuildActionRole5942A84B"
+          }
+        ],
+        "/AwsCodepipelineStack/CodePipeline/CodeBuildActionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodePipelineCodeBuildActionRoleDefaultPolicy36343F4C"
+          }
+        ],
+        "/AwsCodepipelineStack/CodePipeline/UpdatePipeline/SelfMutation/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodePipelineUpdatePipelineSelfMutationRoleB367C8CE"
+          }
+        ],
+        "/AwsCodepipelineStack/CodePipeline/UpdatePipeline/SelfMutation/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodePipelineUpdatePipelineSelfMutationRoleDefaultPolicyB9237C75"
+          }
+        ],
+        "/AwsCodepipelineStack/CodePipeline/UpdatePipeline/SelfMutation/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodePipelineUpdatePipelineSelfMutation6C493B1D"
+          }
+        ],
+        "/AwsCodepipelineStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/AwsCodepipelineStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/AwsCodepipelineStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "AwsCodepipelineStack"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}
